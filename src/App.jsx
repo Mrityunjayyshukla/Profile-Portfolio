@@ -9,6 +9,7 @@ import Works from './sections/Works'
 import ContactSummary from './sections/ContactSummary'
 import Contact from './sections/Contact'
 import { useProgress } from '@react-three/drei'
+import CursorTrail from './components/CursorTrail'
 
 const App = () => {
     const { progress } = useProgress();
@@ -20,7 +21,8 @@ const App = () => {
     }, [progress]);
     console.log(progress);
     return (
-        <ReactLenis root className='relative w-screen min-h-screen overflow-x-auto'>
+        <ReactLenis root className='relative w-screen min-h-screen overflow-x-auto '>
+            <CursorTrail />
             {!isReady && (<div className='fixed inset-0 z-999 flex flex-col items-center justify-center bg-black text-white transition-opacity duration-700 font-light'>
                     <p className='mb-4 text-xl tracking-widest animate-pulse'>
                         Loading {Math.floor(progress)} %
