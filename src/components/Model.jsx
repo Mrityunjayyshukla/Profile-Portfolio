@@ -23,8 +23,8 @@ const Model = () => {
         <Text fontSize={0.4} font="fonts/amiamie/otf/Amiamie-BlackItalicRound.otf" position={[0,0,-.5]}>
             Mrityunjay Shukla
         </Text>
-        <Text fontSize={0.2} font="fonts/amiamie/otf/Amiamie-BlackItalicRound.otf" position={[0, -0.35, -0.5]} color="#555555">
-            Creative Developer
+        <Text fontSize={0.2} font="fonts/amiamie/otf/Amiamie-ItalicRound.otf" position={[0, -0.35, -0.5]} color="#555555">
+            Creative Developer & Designer
         </Text>
         <mesh ref={mesh} {...nodes.Torus002}>
             <MeshTransmissionMaterial {...materialProps}/>

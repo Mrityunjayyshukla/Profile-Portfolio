@@ -5,7 +5,7 @@ import { Environment } from '@react-three/drei'
 
 const Scene = () => {
   return (
-    <Canvas style={{backgroundColor: "black"}}>
+    <Canvas style={{backgroundColor: "black"}} id="home">
         <directionalLight intensity={3} position={[0,3,2]}/>
         <Environment preset='city'/>
         <Model />

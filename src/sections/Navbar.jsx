@@ -1,4 +1,4 @@
-import React, {useRef, useEffect, useState} from 'react'
+import React, {useRef, useState} from 'react'
 import { socials } from "../constants"
 import { useGSAP } from '@gsap/react';
 import gsap from "gsap";
@@ -13,7 +13,7 @@ const Navbar = () => {
     const tl= useRef(null);
     const iconTl = useRef(null);
     const [isOpen, setIsOpen] = useState(false);
-    const [showBurger, setShowBurger] =  useState(true);
+
     useGSAP(()=>{
         gsap.set(navRef.current, { xPercent: 100 });
         gsap.set([linksRef.current, contactRef.current], {
@@ -53,19 +53,6 @@ const Navbar = () => {
 
     },[])
 
-    useEffect(() => {
-        let lastScrollY
-        const handleScroll = () => {
-            const currentScrollY = window.scrollY;
-            setShowBurger(currentScrollY<=lastScrollY || currentScrollY < 10);
-            lastScrollY = currentScrollY;
-        }
-        window.addEventListener("scroll", handleScroll, {
-            passive: true,
-        });
-        return () => window.removeEventListener("scroll", handleScroll);
-
-    }, [])
     const toggleMenu= () => {
         if(isOpen) {
             tl.current.reverse();
@@ -76,6 +63,15 @@ const Navbar = () => {
         }
         setIsOpen(!isOpen);
     }
+
+    const handleLinkClick = () => {
+        if (isOpen) {
+            tl.current.reverse();
+            iconTl.current.reverse();
+            setIsOpen(false);
+        }
+    }
+
   return (
     <>
     <nav
@@ -85,14 +81,23 @@ const Navbar = () => {
         <div className='flex flex-col text-5xl gap-y-2 md:text-6xl lg:text-8xl'>
             {["home", "services", "about", "work", "contact"].map((section, index)=>(
                 <div key={index} ref={(el)=>(linksRef.current[index] = el)}>
-                    <Link className="transition-all duration-300 cursor-pointer hover:text-white" to={`${section}`} smooth offset={0} duration={1000}>{section}</Link>
+                    <Link
+                        className="transition-all duration-300 cursor-pointer hover:text-white"
+                        to={`${section}`}
+                        smooth
+                        offset={0}
+                        duration={1000}
+                        onClick={handleLinkClick}
+                    >
+                        {section}
+                    </Link>
                 </div>
             ))}
         </div>
         <div ref={contactRef} className='flex flex-col flex-wrap justify-between gap-8 md:flex-row'>
             <div className='font-light'>
                 <p className='tracking-wider text-white/50'>E-mail</p>
-                <p className='text-xl tracking-widest lowercase text-pretty'>Johndoe@gmail.com</p>
+                <p className='text-xl tracking-widest lowercase text-pretty'>shuklamrityunjay60@gmail.com</p>
             </div>
             <div className='font-light'>
                 <p className='tracking-wider text-white/50'>Social Media</p>
@@ -100,7 +105,7 @@ const Navbar = () => {
                     <a
                      key={index}
                      href={social.href}
-                     className='text-sm leading-loose transform-widest uppercase hower:text-white transition-colors duration-300'>
+                     className='text-sm leading-loose transform-widest uppercase hover:text-white transition-colors duration-300'>
                         {"{ "}
                         {social.name}
                         {" }"}
@@ -109,7 +114,7 @@ const Navbar = () => {
             </div>
         </div>
     </nav>
-    <div className='fixed z-50 flex flex-col items-center justify-center gap-1 transition-all duration-300 bg-black rounded-full cursor-pointer w-14 h-14 md:w-20 md:h-20 top-4 right-10' onClick={toggleMenu} style={showBurger? {clipPath: "circle(50% at 50% 50%)"} : {clipPath: "circle(0% at 50% 50%)"}}>
+    <div className='fixed z-50 flex flex-col items-center justify-center gap-1 transition-all duration-300 bg-black rounded-full cursor-pointer w-14 h-14 md:w-20 md:h-20 top-4 right-10' onClick={toggleMenu}>
         <span
             ref = {topLineRef}
             className='block w-8 h-0.5 bg-white rounded-full origin-center'>
