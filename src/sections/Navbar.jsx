@@ -3,6 +3,7 @@ import { socials } from "../constants"
 import { useGSAP } from '@gsap/react';
 import gsap from "gsap";
 import { Link } from "react-scroll";
+import { FlipLink } from '../components/RevealLinks'
 
 const Navbar = () => {
     const navRef = useRef(null);
@@ -82,14 +83,14 @@ const Navbar = () => {
             {["home", "services", "about", "work", "contact"].map((section, index)=>(
                 <div key={index} ref={(el)=>(linksRef.current[index] = el)}>
                     <Link
-                        className="transition-all duration-300 cursor-pointer hover:text-white"
                         to={`${section}`}
-                        smooth
+                        smooth={true}
                         offset={0}
                         duration={1000}
                         onClick={handleLinkClick}
+                        className='cursor-pointer'
                     >
-                        {section}
+                        <FlipLink href={`#${section}`}>{section}</FlipLink>
                     </Link>
                 </div>
             ))}

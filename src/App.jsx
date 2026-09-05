@@ -9,6 +9,7 @@ import ContactSummary from './sections/ContactSummary'
 import Contact from './sections/Contact'
 import { useProgress } from '@react-three/drei'
 import Scene from './components/Scene'
+import RevealLinks from './components/RevealLinks'
 
 
 const App = () => {
