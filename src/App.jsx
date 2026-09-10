@@ -1,3 +1,4 @@
+import Header from "./components/Header"
 import Hero from "./sections/Hero"
 
 
@@ -5,7 +6,9 @@ import Hero from "./sections/Hero"
 const App = () => {
     return (
         <main>
+            <Header />
             <Hero />
+
         </main>
     )
 }
