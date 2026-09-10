@@ -67,6 +67,7 @@
         transform-style: preserve-3d;
         p {
             transition: all 0.75s cubic-bezier(0.76, 0, 0.24, 1);
+            font-family: var(--font-fira-sans);
             &:nth-of-type(2) {
                 position: absolute;
                 transform: rotateX(-90deg) translateY(9px);
@@ -93,6 +94,7 @@
             color: black;
             text-decoration: none;
             font-size: 46px;
+            font-family: var(--font-fira-sans);
         }
     }
 }
