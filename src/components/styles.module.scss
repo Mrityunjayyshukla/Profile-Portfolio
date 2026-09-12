@@ -7,8 +7,8 @@
         position: relative;
         width: 400px;
         height: 650px;
-        background-color: #c9fd74;
-        border-radius: 25px;
+        background-color: #fff;
+        border-radius: 20px;
     }
 }
 
@@ -30,8 +30,9 @@
         .el {
             height: 100%;
             width: 100%;
-            background-color: #c9fd74;
+            background-color: #fff;
             text-transform: uppercase;
+            font-weight: bold;
 
             &:nth-of-type(2) {
                 position: absolute;
@@ -94,7 +95,7 @@
             color: black;
             text-decoration: none;
             font-size: 46px;
-            font-family: var(--font-fira-sans);
+            // font-family: var(--font-fira-sans);
         }
     }
 }
