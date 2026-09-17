@@ -3,6 +3,7 @@ import { Links } from '../constants/data';
 import styles from '../components/styles.module.scss'
 import { delay, motion } from 'framer-motion'
 import { transition } from 'three/examples/jsm/tsl/display/TransitionNode.js';
+import RevealLinks from './RevealLinks';
 
 const perspective = {
     initial: {
@@ -42,7 +43,7 @@ const Nav = () => {
                                     exit="exit"
                                     initial="initial"
                                 >
-                                    <a href={link.href}>{link.title}</a>
+                                    <RevealLinks href={link.href} style={{lineHeight: 1.3}}>{link.title}</RevealLinks>
                                 </motion.div>
                             </div>
                         )
