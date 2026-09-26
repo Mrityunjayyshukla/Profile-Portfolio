@@ -20,9 +20,7 @@ const App = () => {
         <main>
             <Hero/>
             <Header />
-            <section className="h-screen flex items-center justify-center ">
-                <Word value={paragraph}/>
-            </section>
+            <Word value={paragraph}/>
             <section className="grid h-screen place-content-center gap-2 bg-green-300 px-8 text-black">
                 <RevealLinks href="#">Twitter</RevealLinks>
                 <RevealLinks href="#">Linkedin</RevealLinks>

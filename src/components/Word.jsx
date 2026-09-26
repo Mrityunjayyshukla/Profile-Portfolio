@@ -1,5 +1,5 @@
 'use client'
-import { useRef } from 'react'
+import { useRef } from 'react';
 import styles from '../components/styles.module.scss'
 import { useScroll, motion, useTransform } from 'framer-motion'
 
@@ -12,18 +12,20 @@ const Word = ({ value }) => {
     })
     const words = value.split(" ");
     return (
-        <p
-            className={styles.paragraph}
-            ref={element}
-        >
-            {
-                words.map((word, i) => {
-                    const start = i / words.length;
-                    const end = start + (1 / words.length);
-                    return <WordElem key={i} range={[start, end]} progress={scrollYProgress}>{word}</WordElem>
-                })
-            }
-        </p>
+        <section className='h-screen flex items-center justify-center'>
+            <p
+                className={styles.paragraph}
+                ref={element}
+            >
+                {
+                    words.map((word, i) => {
+                        const start = i / words.length;
+                        const end = start + (1 / words.length);
+                        return <WordElem key={i} range={[start, end]} progress={scrollYProgress}>{word}</WordElem>
+                    })
+                }
+            </p>
+        </section>
     )
 }
 
@@ -44,12 +46,12 @@ const WordElem = ({ children, range, progress }) => {
     )
 }
 
-const Character = ({children, range, progress}) => {
-    const opacity = useTransform(progress, range, [0,1]);
+const Character = ({ children, range, progress }) => {
+    const opacity = useTransform(progress, range, [0, 1]);
     return (
         <span>
             <span className={styles.shadow}>{children}</span>
-            <motion.span style={{opacity}}>{children}</motion.span>
+            <motion.span style={{ opacity }}>{children}</motion.span>
         </span>
 
     )
