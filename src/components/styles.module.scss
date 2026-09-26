@@ -4,7 +4,7 @@
     top: 40px;
     z-index: 100;
 
-    .menu{
+    .menu {
         position: relative;
         width: 400px;
         height: 650px;
@@ -32,6 +32,7 @@
             height: 100%;
             width: 100%;
             background-color: #fff;
+            color: #000;
             text-transform: uppercase;
             font-weight: bold;
 
@@ -43,14 +44,16 @@
             }
 
             &:hover {
-                .perspectiveText{
+                .perspectiveText {
                     transform: rotateX(90deg);
+
                     p {
-                        &:nth-of-type(1){
+                        &:nth-of-type(1) {
                             transform: translateY(-100%);
                             opacity: 0;
                         }
-                        &:nth-of-type(2){
+
+                        &:nth-of-type(2) {
                             opacity: 1;
                         }
                     }
@@ -67,9 +70,11 @@
         justify-content: center;
         transition: transform 0.75s cubic-bezier(0.76, 0, 0.24, 1);
         transform-style: preserve-3d;
+
         p {
             transition: all 0.75s cubic-bezier(0.76, 0, 0.24, 1);
             font-family: var(--font-fira-sans);
+
             &:nth-of-type(2) {
                 position: absolute;
                 transform: rotateX(-90deg) translateY(9px);
@@ -84,18 +89,20 @@
     height: 100%;
     padding: 100px 40px 50px 40px;
     box-sizing: border-box;
+
     .body {
         display: flex;
         flex-direction: column;
         gap: 10px;
+
         .linkContainer {
             font-weight: 500;
         }
-        a{
+
+        a {
             color: black;
             text-decoration: none;
             font-size: 46px;
-            // font-family: var(--font-fira-sans);
         }
     }
 }
@@ -104,15 +111,17 @@
     font-size: 50px;
     max-width: 1280px;
     padding: 40px;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     display: flex;
     flex-wrap: wrap;
     line-height: 1;
-    .word{
+
+    .word {
         margin-right: 12px;
         margin-top: 12px;
         position: relative;
+
         .shadow {
             position: absolute;
             opacity: 0.1;
