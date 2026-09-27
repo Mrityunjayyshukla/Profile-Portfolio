@@ -1,48 +1,68 @@
-import React from 'react';
-import { motion } from 'framer-motion'
+import React from "react"
+import { motion } from "framer-motion"
+import { twMerge } from "tailwind-merge"
 
-const DURATION = 0.25;
-const STAGGER = 0.025;
-const RevealLinks = ({ children, href, style }) => {
+const DURATION = 0.25
+const STAGGER = 0.025
+
+const RevealLinks = ({
+    children,
+    href,
+    style,
+    onClick,
+    className,
+}) => {
     return (
         <motion.a
             initial="initial"
             whileHover="hovered"
             href={href}
-            className='relative block overflow-hidden whitespace-nowrap text-4xl font-black uppercase sm:text-7xl md:text-8xl lg:text-9xl'
+            className={twMerge(
+                "relative block w-fit overflow-hidden whitespace-nowrap text-4xl font-black uppercase sm:text-7xl md:text-8xl lg:text-9xl",
+                className
+            )}
+
             style={style}
+            onClick={onClick}
         >
             <div>
-                {children.split("").map((l,i) => {
-                    return <motion.span
+                {children.split("").map((l, i) => (
+                    <motion.span
+                        key={i}
                         variants={{
-                            initial: {y:0},
-                            hovered: {y:"-100%"}
+                            initial: { y: 0 },
+                            hovered: { y: "-100%" }
                         }}
                         transition={{
                             duration: DURATION,
                             ease: "easeInOut",
                             delay: STAGGER * i
                         }}
-                        className='inline-block'
-                    key={i}>{l}</motion.span>
-                })}
+                        className="inline-block"
+                    >
+                        {l}
+                    </motion.span>
+                ))}
             </div>
-            <div className='absolute inset-0'>
-                {children.split("").map((l,i) => {
-                    return <motion.span
-                    variants={{
-                            initial: {y:"100%"},
-                            hovered: {y:0}
+
+            <div className="absolute inset-0">
+                {children.split("").map((l, i) => (
+                    <motion.span
+                        key={i}
+                        variants={{
+                            initial: { y: "100%" },
+                            hovered: { y: 0 }
                         }}
                         transition={{
                             duration: DURATION,
                             ease: "easeInOut",
                             delay: STAGGER * i
                         }}
-                        className='inline-block'
-                    key={i}>{l}</motion.span>
-                })}
+                        className="inline-block"
+                    >
+                        {l}
+                    </motion.span>
+                ))}
             </div>
         </motion.a>
     )

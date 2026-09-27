@@ -139,20 +139,20 @@ const Landing = () => {
             </div>
             <section className={styles.hero}>
                 <div className={styles.introimg}>
-                    <img src="./images/img-3.jpg" alt=""/>
+                    <img src="./images/img-3.webp" alt=""/>
                 </div>
                 <div className={styles.introimg}>
-                    <img src="./images/img-2.jpg" alt=""/>
+                    <img src="./images/img-2.webp" alt=""/>
                 </div>
                 <div className={`${styles.introimg} ${styles.heroimg}`}>
-                    <img src="./images/img-1.jpg" alt=""/>
+                    <img src="./images/img-5.webp" alt=""/>
                     <div className={styles.heroImageOverlay} />
                 </div>
                 <div className={styles.introimg}>
-                    <img src="./images/img-4.jpg" alt=""/>
+                    <img src="./images/img-4.webp" alt=""/>
                 </div>
                 <div className={styles.introimg}>
-                    <img src="./images/img-5.jpg" alt=""/>
+                    <img src="./images/img-3.webp" alt=""/>
                 </div>
 
                 <div className={styles.heroContent}>
