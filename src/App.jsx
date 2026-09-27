@@ -2,8 +2,6 @@
 
 import { useEffect } from "react"
 import Lenis from "lenis"
-
-import Header from "./components/Header"
 import RevealLinks from "./components/RevealLinks"
 import Word from "./components/Word"
 import Landing from "./sections/Landing"
@@ -35,7 +33,6 @@ const App = () => {
 
     return (
         <main>
-            {/* <Header /> */}
             <FullScreenMenu />
             <Landing />
 
